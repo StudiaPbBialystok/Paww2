@@ -40,9 +40,6 @@
 
 function initMap() {
 
-
-
-
     $('.tripmap').click(function () {
         var szr = parseFloat($(this).attr('a'));
         var dl = parseFloat($(this).attr('b'));
