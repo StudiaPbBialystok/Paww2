@@ -172,7 +172,9 @@ public class TripController {
 
     @RequestMapping(value = "/country", method = RequestMethod.GET)
     public String coutryDescription(Model model, HttpServletRequest request) {
+
         request.getSession().setAttribute("message", null);
+
         return "country";
 
     }
@@ -187,9 +189,10 @@ public class TripController {
     public String search(Model model, HttpServletRequest request, HttpServletResponse response) throws UnsupportedEncodingException, IOException {
         String countryName = request.getParameter("countryName");
         List<Country> count = service.findCountryByName(countryName);
+        request.getSession().setAttribute("message", null);
 
         if (count.size() > 0) {
-            request.getSession().setAttribute("message", null);
+
             setPrawda(1);
             setCoutryList(count);
             cityList = service.findAllCities();
