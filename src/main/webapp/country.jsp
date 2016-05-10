@@ -51,7 +51,7 @@
                 <%
                     if ((TripController.getPrawda() == 1) & (TripController.getCountryList() != null)) {
                 %>
-
+           
             <table>
                 <thead>
                     <tr>
