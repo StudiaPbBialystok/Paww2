@@ -58,7 +58,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
+                      
                         <th>Name</th>
                         <th>Created</th>
                         <th></th>
@@ -68,7 +68,7 @@
                 <tbody id="test2">
                     <c:forEach items="${trip}" var="trip" >
                         <tr >
-                            <td>${trip.id}</td>
+                            
                             <td><button class="stopsBtn" value="${trip.id}">${trip.name}</button></td>
                             <td>${trip.created}</td>
                             <td><button class="editBtn" value="${trip.id}">Edit</button></td>
