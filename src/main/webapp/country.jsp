@@ -23,34 +23,7 @@
     <body>
 
         <div id="sidebar">   
-            <span id="username"></span>
-            <ul>             
-                <li> 
-                    <form class="siderbarButtons" method="get" action="/Zadanie6_projekt/about">
-                        <div><input  type="submit"  value="Strona główna"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="get" action="/Zadanie6_projekt/map">
-                        <div><input  type="submit" value="Mapa" ></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="Państwa" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input type="submit" value="" name="dodaj"></div>
-                    </form> 
-                </li>
-            </ul>
+            <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">
@@ -82,7 +55,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
+
                         <th>Name</th>
                         <th>Description</th>
                     </tr>
@@ -92,7 +65,7 @@
 
                     <tr >
                         <% Country panstwo = TripController.getCountryList().get(0); %>
-                        <td><% out.println(panstwo.getId()); %></td>
+
                         <td><% out.println(panstwo.getName()); %></td>    
                         <td><% out.println(panstwo.getDescription()); %></td>
                     </tr>
@@ -100,12 +73,13 @@
                 </tbody>
                 <thead>
                     <tr>
-                        <th>Id</th>
+
                         <th>City</th>
                         <th>Attractions</th>
                     </tr>
                 </thead>
                 <tbody id="test2">
+
 
                     <c:if test="${city.size()>0}">
 
@@ -113,7 +87,6 @@
                             <tr >
                                 <td>${city.id}</td>
                                 <td>${city.name}</td>
-                                <td>${city.description}</td>
                                 <td><button id="attractionButton" value="${city.id}">Atrakcje</button></td>  
                             </tr>
                         </c:forEach>
@@ -123,7 +96,6 @@
 
 
             <% }
-
             %>
 
 

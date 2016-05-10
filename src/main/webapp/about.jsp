@@ -4,7 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,26 +21,9 @@
 
 
     <body>
-
+        
         <div id="sidebar">   
-            <span id="username"></span>
-            <ul>             
-                <li> 
-                    <form class="siderbarButtons" method="get" action="/Zadanie6_projekt/about">
-                        <div><input  type="submit"  value="Strona główna"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="get" action="/Zadanie6_projekt/map">
-                        <div><input  type="submit" value="Mapa" ></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="get" action="/Zadanie6_projekt/country">
-                        <div><input  type="submit" value="Państwa" ></div>
-                    </form> 
-                </li>               
-            </ul>
+           <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">
@@ -56,11 +39,11 @@
                     <a  class="navbar-brand col-sm-offset-5"><h3>Travels</h3></a>                   
                 </div>
             </nav>    
-
+            
             <table>
                 <thead>
                     <tr>
-                        <th>Id</th>
+                      
                         <th>Name</th>
                         <th>Created</th>
                         <th></th>
@@ -70,7 +53,7 @@
                 <tbody id="test2">
                     <c:forEach items="${trip}" var="trip" >
                         <tr >
-                            <td>${trip.id}</td>
+                            
                             <td><button class="stopsBtn" value="${trip.id}">${trip.name}</button></td>
                             <td><fmt:formatDate pattern="yyyy-MM-dd" 
                                             value="${trip.created}" /></td>                
