@@ -22,24 +22,7 @@
     <body>
         
         <div id="sidebar">   
-            <span id="username"></span>
-            <ul>             
-                <li> 
-                    <form class="siderbarButtons" method="get" action="/Zadanie6_projekt/about">
-                        <div><input  type="submit"  value="Strona główna"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="get" action="/Zadanie6_projekt/map">
-                        <div><input  type="submit" value="Mapa" ></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="get" action="/Zadanie6_projekt/country">
-                        <div><input  type="submit" value="Państwa" ></div>
-                    </form> 
-                </li>               
-            </ul>
+           <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">
