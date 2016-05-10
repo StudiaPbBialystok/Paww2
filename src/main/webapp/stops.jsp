@@ -71,6 +71,11 @@
                         required title="format YYYY-MM-DD"       >
                 <button type="submit" >Add stop</button>
             </form>
+             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/stops/${tripId}">               
+                <input  name="date" placeholder="Data" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
+                        required title="format YYYY-MM-DD"       >
+                <button type="submit" >Szukaj po dacie</button>
+            </form>    
             <div id="outermap">
                 <div id="map"></div> 
             </div>

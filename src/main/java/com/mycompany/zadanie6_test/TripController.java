@@ -122,6 +122,7 @@ public class TripController {
         String url = "http://dev.virtualearth.net/REST/v1/Locations?q=" + encodedName + "&key=" + bingKey;
         String document = Jsoup.connect(url).ignoreContentType(true).execute().body();
         JSONObject obj = new JSONObject(document);
+        try{
         JSONObject arr = (JSONObject) (obj.getJSONArray("resourceSets").get(0));
         JSONObject arr2 = (JSONObject) arr.getJSONArray("resources").get(0);
         JSONObject arr3 = (JSONObject) arr2.getJSONArray("geocodePoints").get(0);
@@ -136,6 +137,12 @@ public class TripController {
         newStop.setArrival(format.parse(request.getParameter("date")));
         service.addStop(newStop);
         return "redirect:/stops/" + Integer.toString(TripId);
+        }
+        catch(Exception ex){
+            String message = "Nie ma takiego miasta";
+        request.getSession().setAttribute("message1", message);
+         return "redirect:/stops/" + Integer.toString(TripId);
+        }
 
     }
 

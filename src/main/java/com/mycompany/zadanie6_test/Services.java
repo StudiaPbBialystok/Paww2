@@ -103,6 +103,10 @@ public class Services {
         return stopDao.deleteStop(stop);
     }
 
+    public List<Stop> findAfterDate(String date){
+        return stopDao.findAfterDate(date);
+    }
+    
     public int getMaxId(List<Trip> trips) {
         int max = 0;
         for (Trip trip : trips) {

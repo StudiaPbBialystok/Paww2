@@ -21,9 +21,9 @@
 
 
     <body>
-        
+
         <div id="sidebar">   
-           <%@include file="menu.html" %>
+            <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">
@@ -39,11 +39,11 @@
                     <a  class="navbar-brand col-sm-offset-5"><h3>Travels</h3></a>                   
                 </div>
             </nav>    
-            
+
             <table>
                 <thead>
                     <tr>
-                      
+
                         <th>Name</th>
                         <th>Created</th>
                         <th></th>
@@ -53,7 +53,7 @@
                 <tbody id="test2">
                     <c:forEach items="${trip}" var="trip" >
                         <tr >
-                            
+
                             <td><button class="stopsBtn" value="${trip.id}">${trip.name}</button></td>
                             <td><fmt:formatDate pattern="yyyy-MM-dd" 
                                             value="${trip.created}" /></td>                
@@ -63,7 +63,8 @@
                     </c:forEach>
                 </tbody>
             </table>
-
+            
+            <div class="col-sm-offset-2"> Łączna liczba podróży <c:out value="${trip.size()}"/></div>
 
             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/add">               
                 <input  name="tripName"  placeholder="Name" pattern="[A-Za-z].{3,30}"   required title="3-30 characters, only letters">               

@@ -31,6 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Stop.findAll", query = "SELECT s FROM Stop s"),
     @NamedQuery(name = "Stop.findById", query = "SELECT s FROM Stop s WHERE s.id = :id"),
     @NamedQuery(name = "Stop.findByArrival", query = "SELECT s FROM Stop s WHERE s.arrival = :arrival"),
+    @NamedQuery(name = "Stop.findAfterDate", query = "SELECT s FROM Stop s WHERE s.arrival > :date"),
     @NamedQuery(name = "Stop.findByLatitude", query = "SELECT s FROM Stop s WHERE s.latitude = :latitude"),
     @NamedQuery(name = "Stop.findByLongitude", query = "SELECT s FROM Stop s WHERE s.longitude = :longitude"),
     @NamedQuery(name = "Stop.findByName", query = "SELECT s FROM Stop s WHERE s.name = :name"),

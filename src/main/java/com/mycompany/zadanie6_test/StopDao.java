@@ -43,6 +43,12 @@ public class StopDao {
         query.setParameter("tripid", tripId);
         return (List<Stop>) query.getResultList();
     }
+    
+     public List<Stop> findAfterDate(String date) {
+        TypedQuery<Stop> query = entityManager.createNamedQuery("Stop.findAfterDate", Stop.class);
+        query.setParameter("date", date);
+        return (List<Stop>) query.getResultList();
+    }
 
     @Transactional
     public boolean addStop(Stop stop) {
