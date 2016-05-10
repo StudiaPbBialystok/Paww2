@@ -74,7 +74,7 @@
 
             </form>
             <p>${message}<p>
-          
+
                 <%
                     if ((TripController.getPrawda() == 1) & (TripController.getCountryList() != null)) {
                 %>
@@ -105,18 +105,19 @@
                         <th>Attractions</th>
                     </tr>
                 </thead>
-                     <tbody id="test2">
+                <tbody id="test2">
 
+                    <c:if test="${city.size()>0}">
 
-                  <c:forEach items="${city}" var="city" >
-                        <tr >
-                            <td>${city.id}</td>
-                            <td>${city.name}</td>
-                            <td>${city.description}</td>
-                            <td><button id="attractionButton" value="${city.id}">Atrakcje</button></td>  
-                        </tr>
-                    </c:forEach>
-
+                        <c:forEach items="${city}" var="city" >
+                            <tr >
+                                <td>${city.id}</td>
+                                <td>${city.name}</td>
+                                <td>${city.description}</td>
+                                <td><button id="attractionButton" value="${city.id}">Atrakcje</button></td>  
+                            </tr>
+                        </c:forEach>
+                    </c:if>
                 </tbody>
             </table>
 

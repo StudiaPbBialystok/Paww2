@@ -3,6 +3,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -70,7 +72,8 @@
                         <tr >
                             <td>${trip.id}</td>
                             <td><button class="stopsBtn" value="${trip.id}">${trip.name}</button></td>
-                            <td>${trip.created}</td>
+                            <td><fmt:formatDate pattern="yyyy-MM-dd" 
+                                            value="${trip.created}" /></td>                
                             <td><button class="editBtn" value="${trip.id}">Edit</button></td>
                             <td><button class="deleteTripBtn" value="${trip.id}">Delete</button></td>  
                         </tr>

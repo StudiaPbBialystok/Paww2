@@ -3,6 +3,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -78,9 +79,12 @@
                     <c:forEach items="${stops}" var="stop" >
                         <tr >
                             <td><button class="tripmap" a="${stop.latitude}" b="${stop.longitude}">${stop.name}</button></td>
-                            <td>${stop.arrival}</td>
-                            <td class="szer" >${stop.latitude}</td>
-                            <td class="dlugosc">${stop.longitude}</td>
+                            <td><fmt:formatDate pattern="yyyy-MM-dd" 
+                                            value="${stop.arrival}" /></td>
+                            <td class="szer" > <fmt:formatNumber type="number" 
+                                              maxIntegerDigits="3" value="${stop.latitude}" /></td>
+                            <td class="dlugosc"><fmt:formatNumber type="number" 
+                                              maxIntegerDigits="3" value="${stop.longitude}" /></td>
                             <td><button class="deleteStopBtn" itemid="${stop.tripid}" value="${stop.id}">Delete</button></td>
                         </tr>
                     </c:forEach>
@@ -91,7 +95,7 @@
             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/stops/${tripId}">               
                 <input  name="location" placeholder="Name"  pattern="[A-Za-z].{2,20}"   required title="2-20 characters, only letters">               
                 <input  name="date" placeholder="Data" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
-                 required title="format YYYY-MM-DD"       >
+                        required title="format YYYY-MM-DD"       >
                 <button type="submit" >Add stop</button>
             </form>
             <div id="outermap">
