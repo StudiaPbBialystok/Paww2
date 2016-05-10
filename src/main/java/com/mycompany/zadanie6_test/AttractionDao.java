@@ -36,4 +36,10 @@ public class AttractionDao {
         TypedQuery<Attraction> query = entityManager.createNamedQuery("Attraction.findAll", Attraction.class);
         return (List<Attraction>) query.getResultList();
     }
+    
+       public List<Attraction> findByCityId(int cityId) {
+        TypedQuery<Attraction> query = entityManager.createNamedQuery("Attraction.findByCityId", Attraction.class);
+        query.setParameter("cityid", cityId);
+        return (List<Attraction>) query.getResultList();
+    }
 }

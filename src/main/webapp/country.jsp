@@ -112,7 +112,7 @@
                             <td>${city.id}</td>
                             <td>${city.name}</td>
                             <td>${city.description}</td>
-                            <td><button id="attractionButton">Atrakcje</button></td>  
+                            <td><button id="attractionButton" value="${city.id}">Atrakcje</button></td>  
                         </tr>
                     </c:forEach>
 

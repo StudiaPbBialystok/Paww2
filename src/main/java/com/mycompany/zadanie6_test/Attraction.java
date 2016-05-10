@@ -27,7 +27,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Attraction.findAll", query = "SELECT a FROM Attraction a"),
-    @NamedQuery(name = "Attraction.findById", query = "SELECT a FROM Attraction a WHERE a.id = :id")})
+    @NamedQuery(name = "Attraction.findById", query = "SELECT a FROM Attraction a WHERE a.id = :id"),
+    @NamedQuery(name = "Attraction.findByCityId", query = "SELECT a FROM Attraction a WHERE a.cityid = :cityid")})
+
 public class Attraction implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,6 +50,14 @@ public class Attraction implements Serializable {
     @NotNull
     @Column(name = "CITYID")
     private int cityid;
+
+    public int getCityid() {
+        return cityid;
+    }
+
+    public void setCityid(int cityid) {
+        this.cityid = cityid;
+    }
 
     public Attraction() {
     }
@@ -109,5 +119,5 @@ public class Attraction implements Serializable {
     public String toString() {
         return "com.mycompany.zadanie6_test.Attraction[ id=" + id + " ]";
     }
-    
+
 }

@@ -20,8 +20,7 @@
                 + $(this).attr('value'));
     });
     $('#attractionButton').click(function () {
-        alert("wtf");
-        window.location.href = (/Zadanie6_projekt/ + 'attractions');
+        window.location.href = (/Zadanie6_projekt/ + 'attractions/' + $(this).attr('value'));
     });
 
     var $sidebarAndWrapper = $("#sidebar,#wrapper");

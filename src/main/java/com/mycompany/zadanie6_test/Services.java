@@ -33,6 +33,10 @@ public class Services {
         return attractionDao.findAll();
     }
     
+     public List<Attraction> findAttractionsByCityId(int cityId){
+        return attractionDao.findByCityId(cityId);
+    }
+    
     public City findCityById(int id){
             return cityDao.findById(id);
     }

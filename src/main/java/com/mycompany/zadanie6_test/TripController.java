@@ -176,9 +176,9 @@ public class TripController {
 
     }
 
-    @RequestMapping(value = "/attractions", method = RequestMethod.GET)
-    public String attractions(Model model, HttpServletRequest request) {
-        model.addAttribute("attraction", service.findAllAttractions());
+    @RequestMapping(value = "/attractions/{CityId}", method = RequestMethod.GET)
+    public String attractions(Model model, HttpServletRequest request, @PathVariable int CityId) {
+        model.addAttribute("attraction", service.findAttractionsByCityId(CityId));
         return "attractions";
     }
 

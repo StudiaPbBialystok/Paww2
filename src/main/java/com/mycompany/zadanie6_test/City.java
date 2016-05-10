@@ -29,7 +29,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "City.findAll", query = "SELECT c FROM City c"),
     @NamedQuery(name = "City.findById", query = "SELECT c FROM City c WHERE c.id = :id"),
     @NamedQuery(name = "City.findByCountryId", query = "SELECT c FROM City c WHERE c.countryid = :countryid")})
-
 public class City implements Serializable {
 
     private static final long serialVersionUID = 1L;
