@@ -68,7 +68,8 @@
             </nav>    
 
             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/search">               
-                <input  name="countryName" placeholder="country">               
+                <input  name="countryName" placeholder="country"
+                        pattern="[A-Za-z].{2,30}"   required title="2-30 characters, only letters">               
                 <button type="submit" >Search</button>
 
             </form>

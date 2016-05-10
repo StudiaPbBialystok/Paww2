@@ -65,10 +65,11 @@
             </nav>    
 
 
-            <form class="form-inline col-sm-offset-2" role="form" method="post"
+            <form class="form-inline col-sm-offset-4 formularz" role="form" method="post"
                   action="/Zadanie6_projekt/edit">
                 <div class="form-group">
-                    <input class="form-control" id="tripName" name="tripName" placeholder="Name">
+                    <input id="tripName" name="tripName" placeholder="Name"
+                           pattern="[A-Za-z].{3,30}"   required title="3-30 characters">
                 </div>
                 <button type="submit" class="btn btn-primary">Edytuj</button>
             </form>

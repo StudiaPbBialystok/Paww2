@@ -21,8 +21,9 @@
                 <div class="login-triangle"></div>
                 <h2 class="login-header">Log in</h2>
                 <form  class="login-container" method="post" action="">
-                    <p><input type="email" name="email" placeholder="Email" required></p>
-                    <p><input type="password" name="password" placeholder="Password" required></p>
+                    <p><input id="emailInput" type="email" name="email" placeholder="Email" required></p>
+                    <p><input id="passwordInput" type="password" name="password" placeholder="Password"
+                              pattern=".{5,10}" required title="5 to 10 characters"></p>
                     <p><input type="submit" value="Log in"></p>
                     <p>${message}</p>                  
                     
@@ -33,7 +34,7 @@
         <div id="top" >
             <p>Podróże kształcą</p>
         </div>
-
+        <script src="<c:url value="/resources/js/site.js"/>"></script>
     </body>
 
 </html>

@@ -2,7 +2,8 @@
 
 
 (function () {
-
+    
+    
     $('.editBtn').click(function () {
         window.location.href = (/Zadanie6_projekt/ + 'edit/' + $(this).attr('value'));
     });

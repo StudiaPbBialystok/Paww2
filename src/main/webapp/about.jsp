@@ -80,7 +80,7 @@
 
 
             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/add">               
-                <input  name="tripName" placeholder="Name">               
+                <input  name="tripName"  placeholder="Name" pattern="[A-Za-z].{3,30}"   required title="3-30 characters, only letters">               
                 <button type="submit" >Add trip</button>
             </form>
 

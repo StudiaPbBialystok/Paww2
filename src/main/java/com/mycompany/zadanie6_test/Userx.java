@@ -53,7 +53,7 @@ public class Userx implements Serializable {
     @Size(min = 1, max = 30)
     @Column(name = "LASTNAME")
     private String lastname;
-    @Size(max = 30)
+    @Size(min=6, max = 30)
     @Column(name = "PASSWORD")
     private String password;
 

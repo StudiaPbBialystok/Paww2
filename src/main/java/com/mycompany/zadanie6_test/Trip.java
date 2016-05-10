@@ -21,6 +21,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -53,6 +54,7 @@ public class Trip implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date created;
     @Lob
+    @Size(min=3, max = 100)
     @Column(name = "NAME")
     private String name;
     @Lob
