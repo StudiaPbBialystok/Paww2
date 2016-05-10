@@ -3,6 +3,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +20,7 @@
 
 
     <body>
-
+        
         <div id="sidebar">   
             <span id="username"></span>
             <ul>             
@@ -54,7 +55,7 @@
                     <a  class="navbar-brand col-sm-offset-5"><h3>Travels</h3></a>                   
                 </div>
             </nav>    
-
+            
             <table>
                 <thead>
                     <tr>
