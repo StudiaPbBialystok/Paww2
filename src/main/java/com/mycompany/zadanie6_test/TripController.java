@@ -24,6 +24,8 @@ import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -60,23 +62,31 @@ public class TripController {
         return "index";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String logUser(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    @RequestMapping(value = "/index", method = RequestMethod.POST)
+    public ResponseEntity<String> logUser(Model model, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String mail = request.getParameter("email");
-        model.addAttribute("trip", service.findAllTrips());
-        List<Userx> users = (List<Userx>) service.findUserxByEmail(mail);
-        if (users.size() > 0) {
-            String password = request.getParameter("password");
-            if (users.get(0).getPassword().equals(password)) {
-                model.addAttribute("trips", service.findAllTrips());
-                return "/about";
-            }
-
+//        model.addAttribute("trip", service.findAllTrips());
+//        List<Userx> users = (List<Userx>) service.findUserxByEmail(mail);
+//        if (users.size() > 0) {
+//            String password = request.getParameter("password");
+//            if (users.get(0).getPassword().equals(password)) {
+//                model.addAttribute("trips", service.findAllTrips());
+//                return "/about";
+//            }
+//
+//        }
+//
+//        String message = "Błędny login/hasło";
+//        request.getSession().setAttribute("message", message);
+//        return "/index";
+        String password = request.getParameter("password");
+        try {
+            service.findUserxLogins(mail, password);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
         }
 
-        String message = "Błędny login/hasło";
-        request.getSession().setAttribute("message", message);
-        return "/index";
     }
 
     @RequestMapping(value = "/map", method = RequestMethod.GET)

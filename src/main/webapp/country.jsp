@@ -85,9 +85,8 @@
 
                         <c:forEach items="${city}" var="city" >
                             <tr >
-                                <td>${city.id}</td>
                                 <td>${city.name}</td>
-                                <td><button id="attractionButton" value="${city.id}">Atrakcje</button></td>  
+                                <td><button class="attractionButton" value="${city.id}">Atrakcje</button></td>  
                             </tr>
                         </c:forEach>
                     </c:if>

@@ -27,6 +27,15 @@ public class UserxDao {
         return (Userx) entityManager.find(Userx.class, id);
     }
     
+    
+    @Transactional(readOnly = true)
+    public Userx findUser(String email, String password) {
+        TypedQuery<Userx> query = entityManager.createNamedQuery("Userx.findByLastChristmas", Userx.class);
+        query.setParameter("email", email);
+        query.setParameter("password", password);
+        return (Userx)query.getSingleResult();
+    }
+    
 
     public List<Userx> findByEmail(String email) {
         TypedQuery<Userx> query = entityManager.createNamedQuery("Userx.findByEmail", Userx.class);

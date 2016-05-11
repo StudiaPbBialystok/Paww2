@@ -9,10 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author Katarzyna Borowska
- */
+
 @Service
 public class Services {
 
@@ -70,6 +67,10 @@ public class Services {
         return userxDao.findByEmail(email);
     }
 
+     public Userx findUserxLogins(String email, String password) {
+        return userxDao.findUser(email, password);
+    }
+    
     public List<Trip> findAllTrips() {
         return tripDao.findAll();
     }

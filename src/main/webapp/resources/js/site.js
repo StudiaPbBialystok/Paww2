@@ -20,7 +20,7 @@
         window.location.href = (/Zadanie6_projekt/ + 'stops/delete/' + $(this).attr('itemid') + "/"
                 + $(this).attr('value'));
     });
-    $('#attractionButton').click(function () {
+    $('.attractionButton').click(function () {
         window.location.href = (/Zadanie6_projekt/ + 'attractions/' + $(this).attr('value'));
     });
 
@@ -60,17 +60,32 @@ function initMap() {
 }
 ;
 
-$(".test").submit(function () {
+$('input[type="submit"]').on("click", function () {
 
+    var email = $('input:first').val();
+    var password = $('input#passwordInput').val();
+    if($.trim(email.length)==0){
+      alert("wpisz email");
+        return false;
+    }
+    
+    if($.trim(password.length)==0){
+      alert("wpisz haslo");
+        return false;
+    }
+      
     $.ajax({
         type: "POST",
-        url: "/index",
-        data: $('#add_positioning').serialize(),
+        url: "/Zadanie6_projekt/index",
+        data: "email=" + email + "&password=" + password,
         success: function () {
-            $("#successMessage").html("It worked");
+            window.location.href = (/Zadanie6_projekt/ + 'about/');
+            
+        }, error: function(){
+            $(".return").html("Błędny login lub hasło").show();
         }
+
     });
-
-
+    return false;
 
 });
