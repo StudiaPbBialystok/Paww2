@@ -4,6 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +22,7 @@
     <body>
 
         <div id="sidebar">   
-              <%@include file="menu.html" %>
+            <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">
@@ -64,17 +65,11 @@
                 </tbody>
             </table>
 
-
             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/stops/${tripId}">               
                 <input  name="location" placeholder="Name"  pattern="[A-Za-z].{2,20}"   required title="2-20 characters, only letters">               
                 <input  name="date" placeholder="Data" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
                         required title="format YYYY-MM-DD"       >
                 <button type="submit" >Add stop</button>
-            </form>
-             <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/stops/${tripId}">               
-                <input  name="date" placeholder="Data" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
-                        required title="format YYYY-MM-DD"       >
-                <button type="submit" >Szukaj po dacie</button>
             </form>    
             <div id="outermap">
                 <div id="map"></div> 

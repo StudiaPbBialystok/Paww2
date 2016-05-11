@@ -25,7 +25,7 @@
                     <p><input id="passwordInput" type="password" name="password" placeholder="Password"
                               pattern=".{5,10}" required title="5 to 10 characters"></p>
                     <p><input class="test" type="submit" value="Log in"></p>
-                    <div id="successMessage" > </div>               
+                    <p>${message}</p>
 
                 </form>
             </div>
