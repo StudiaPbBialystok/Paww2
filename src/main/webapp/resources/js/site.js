@@ -2,8 +2,8 @@
 
 
 (function () {
-    
-    
+
+
     $('.editBtn').click(function () {
         window.location.href = (/Zadanie6_projekt/ + 'edit/' + $(this).attr('value'));
     });
@@ -60,4 +60,17 @@ function initMap() {
 }
 ;
 
+$(".test").submit(function () {
 
+    $.ajax({
+        type: "POST",
+        url: "/index",
+        data: $('#add_positioning').serialize(),
+        success: function () {
+            $("#successMessage").html("It worked");
+        }
+    });
+
+
+
+});

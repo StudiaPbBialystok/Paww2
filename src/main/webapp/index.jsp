@@ -24,13 +24,13 @@
                     <p><input id="emailInput" type="email" name="email" placeholder="Email" required></p>
                     <p><input id="passwordInput" type="password" name="password" placeholder="Password"
                               pattern=".{5,10}" required title="5 to 10 characters"></p>
-                    <p><input type="submit" value="Log in"></p>
-                    <p>${message}</p>                  
-                    
+                    <p><input class="test" type="submit" value="Log in"></p>
+                    <div id="successMessage" > </div>               
+
                 </form>
             </div>
         </div>
-     
+
         <div id="top" >
             <p>Podróże kształcą</p>
         </div>

@@ -29,6 +29,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -71,7 +72,10 @@ public class TripController {
                 return "/about";
             }
 
+        }else{        
+            return "The id selected is out of Range, please select another id within range";
         }
+        
         String message = "Błędny login/hasło";
         request.getSession().setAttribute("message", message);
         return "/index";

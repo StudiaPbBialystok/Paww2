@@ -20,34 +20,7 @@
     <body>
 
         <div id="sidebar">   
-            <span id="username"></span>
-            <ul>             
-                <li> 
-                    <form class="siderbarButtons" method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit"  value="hehe" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="Usun film!" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="Usun film!" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="Usun film!" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input type="submit" value="Usun film!" name="dodaj"></div>
-                    </form> 
-                </li>
-            </ul>
+               <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">

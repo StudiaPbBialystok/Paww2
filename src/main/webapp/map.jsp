@@ -22,34 +22,7 @@
     <body>
 
         <div id="sidebar">   
-            <span id="username"></span>
-            <ul>             
-                <li> 
-                    <form class="siderbarButtons" method="get" action="/Zadanie6_projekt/about">
-                        <div><input  type="submit"  value="Strona główna" name="return"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="!" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="!" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input  type="submit" value="" name="dodaj"></div>
-                    </form> 
-                </li>
-                <li>
-                    <form class="siderbarButtons"  method="post" action="/Zadanie6_test/About.jsp">
-                        <div><input type="submit" value="" name="dodaj"></div>
-                    </form> 
-                </li>
-            </ul>
+              <%@include file="menu.html" %>
         </div>
 
         <div id="wrapper">
