@@ -89,3 +89,9 @@ $('input[type="submit"]').on("click", function () {
     return false;
 
 });
+
+  $('button').mouseover(function () {                    
+                    $(this).css('background-color', '#17c');
+                }).mouseleave(function () {
+                    $(this).css('background-color', '#28d');
+                });

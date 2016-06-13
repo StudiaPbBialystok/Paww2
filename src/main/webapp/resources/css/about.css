@@ -3,22 +3,23 @@
 
 .siderbarButtons{
 
-    font-size: 25px;
+    font-size: 15px;
     padding : 10px;
 }
 
 
-.siderbarButtons input[type="submit"] {
+.siderbarButtons button{
     border-radius: 8px;
     background: #28d;
     border-color: transparent;
     color: #fff;
     cursor: pointer;
+    font-weight: bold;
 }
 
-.siderbarButtons input[type="submit"]:hover {
+/*.siderbarButtons input[type="submit"]:hover {
     background: #17c;
-}
+}*/
 
 
 .formularz{ 
@@ -44,9 +45,9 @@
     cursor: pointer;
 }
 
-.formularz button:hover{ 
+/*.formularz button:hover{ 
     background: #17c;
-}
+}*/
 
 .editBtn button{    
     padding : 10px;
@@ -61,9 +62,9 @@
     cursor: pointer;
 }
 
-.editBtn button:hover{ 
+/*.editBtn button:hover{ 
     background: #17c;
-}
+}*/
 
 #sidebar {
     background: #2a2c36;
@@ -174,9 +175,9 @@ table button{
     cursor: pointer;
 }
 
-table button:hover{ 
+/*table button:hover{ 
     background: #17c;
-}
+}*/
 
 th {
     background: url(http://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
