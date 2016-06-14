@@ -10,7 +10,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-        <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>       
+        <script src="<c:url value="/resources/js/jquery-3.0.0.min.js" />"></script>       
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">       

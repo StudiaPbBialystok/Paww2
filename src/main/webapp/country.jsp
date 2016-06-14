@@ -8,14 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-        <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-        <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
-        <link href="<c:url value="/resources/css/about.css" />" rel="stylesheet">
-
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> 
+        <%@include file="head.jsp" %>
         <title>JSP Page</title>
     </head>
 
@@ -51,7 +44,7 @@
                 <%
                     if ((TripController.getPrawda() == 1) & (TripController.getCountryList() != null)) {
                 %>
-           
+
             <table>
                 <thead>
                     <tr>

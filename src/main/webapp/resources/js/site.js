@@ -64,24 +64,24 @@ $('input[type="submit"]').on("click", function () {
 
     var email = $('input:first').val();
     var password = $('input#passwordInput').val();
-    if($.trim(email.length)==0){
-      alert("wpisz email");
+    if ($.trim(email.length) == 0) {
+        alert("wpisz email");
         return false;
     }
-    
-    if($.trim(password.length)==0){
-      alert("wpisz haslo");
+
+    if ($.trim(password.length) == 0) {
+        alert("wpisz haslo");
         return false;
     }
-      
+
     $.ajax({
         type: "POST",
         url: "/Zadanie6_projekt/index",
         data: "email=" + email + "&password=" + password,
         success: function () {
             window.location.href = (/Zadanie6_projekt/ + 'about/');
-            
-        }, error: function(){
+
+        }, error: function () {
             $(".return").html("Błędny login lub hasło").show();
         }
 
@@ -90,8 +90,13 @@ $('input[type="submit"]').on("click", function () {
 
 });
 
-  $('button').mouseover(function () {                    
-                    $(this).css('background-color', '#17c');
-                }).mouseleave(function () {
-                    $(this).css('background-color', '#28d');
-                });
+$('button').mouseover(function () {
+    $(this).css('background-color', '#17c');
+}).mouseleave(function () {
+    $(this).css('background-color', '#28d');
+});
+
+$("#myTable").tablesorter({
+    // sort on the first column and third column, order asc 
+    sortList: [[0, 0], [2, 0]]
+}); 
