@@ -89,6 +89,51 @@ public class TripController {
 
     }
 
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public String addUser(Model model, HttpServletRequest request) throws IOException, ServletException {
+        String mail = request.getParameter("email");
+        int exist = 0;
+        List<Userx> users = service.findAllUsers();
+
+        dodal = 1;
+
+        Userx newUser = new Userx();
+        newUser.setId(service.getMaxUserId(service.findAllUsers()) + 1);
+        int id = service.getMaxUserId(service.findAllUsers()) + 1;
+        System.out.print(id);
+        newUser.setFirstname(request.getParameter("firstname"));
+        newUser.setLastname(request.getParameter("lastname"));
+        newUser.setEmail(request.getParameter("email"));
+        newUser.setPassword(request.getParameter("pass"));
+        service.addUser(newUser);
+        model.addAttribute("user", service.findAllUsers());
+        return "index";
+
+//        try {
+//            service.findUserEmail(mail);
+//            Userx newUser = new Userx();
+//            newUser.setId(service.getMaxUserId(service.findAllUsers()) + 1);
+//            int id = service.getMaxUserId(service.findAllUsers()) + 1;
+//            System.out.print(id);
+//            newUser.setFirstname(request.getParameter("firstname"));
+//            newUser.setLastname(request.getParameter("lastname"));
+//            newUser.setEmail(request.getParameter("email"));
+//            newUser.setPassword(request.getParameter("pass"));
+//            service.addUser(newUser);
+//            model.addAttribute("user", service.findAllUsers());
+//            return new ResponseEntity<>(HttpStatus.OK);
+//        } catch (Exception e) {
+//
+//            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+//        }
+    }
+
+    @RequestMapping(value = "/join", method = RequestMethod.GET)
+    public String logUser5(Model model, HttpServletRequest request) {
+        return "join";
+
+    }
+
     @RequestMapping(value = "/map", method = RequestMethod.GET)
     public String logUser4(Model model, HttpServletRequest request) {
         return "map";

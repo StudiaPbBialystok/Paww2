@@ -20,13 +20,13 @@
             <%@include file="menu.html" %>
         </div>
 
-        <div id="wrapper">
+        <div id="wrapper" ng-app="myApp">
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <button id="sidebarToggle" class="btn btn-primary">
-                                <i class="fa fa-angle-left"></i> <-
+                                <i class="fa fa-angle-left"></i> Menu
                             </button>
                         </li>
                     </ul>
@@ -34,7 +34,7 @@
                 </div>
             </nav>    
 
-            <table id="myTable" class="tablesorter">
+            <table class="tablesorter">
                 <thead>
                     <tr>
 
@@ -49,8 +49,7 @@
                         <tr >
 
                             <td><button class="stopsBtn" value="${trip.id}">${trip.name}</button></td>
-                            <td><fmt:formatDate pattern="yyyy-MM-dd" 
-                                            value="${trip.created}" /></td>                
+                            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${trip.created}" /></td>                
                             <td><button class="editBtn" value="${trip.id}">Edit</button></td>
                             <td><button class="deleteTripBtn" value="${trip.id}">Delete</button></td>  
                         </tr>
@@ -60,7 +59,7 @@
 
             <div class="col-sm-offset-2"> Łączna liczba podróży <c:out value="${trip.size()}"/></div>
 
-            <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/add">               
+            <form class="form1" role="form" method="post" action="/Zadanie6_projekt/add">               
                 <input  name="tripName"  placeholder="Name" pattern="[A-Za-z].{3,30}"   required title="3-30 characters, only letters">               
                 <button type="submit" >Add trip</button>
             </form>

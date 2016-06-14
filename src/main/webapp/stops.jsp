@@ -24,7 +24,7 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <button id="sidebarToggle" class="btn btn-primary">
-                                <i class="fa fa-angle-left"></i> <-
+                                <i class="fa fa-angle-left"></i> Menu
                             </button>
                         </li>
                     </ul>
@@ -32,7 +32,7 @@
                 </div>
             </nav>    
 
-            <table>
+            <table class="tablesorter">
                 <thead>
                     <tr>
                         <th>Nazwa</th>
@@ -58,7 +58,7 @@
                 </tbody>
             </table>
 
-            <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/stops/${tripId}">               
+            <form class="form1" role="form" method="post" action="/Zadanie6_projekt/stops/${tripId}">               
                 <input  name="location" placeholder="Name"  pattern="[A-Za-z].{2,20}"   required title="2-20 characters, only letters">               
                 <input  name="date" placeholder="Data" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))"
                         required title="format YYYY-MM-DD"       >

@@ -25,7 +25,7 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <button id="sidebarToggle" class="btn btn-primary">
-                                <i class="fa fa-angle-left"></i> <-
+                                <i class="fa fa-angle-left"></i> Menu
                             </button>
                         </li>
                     </ul>
@@ -33,7 +33,7 @@
                 </div>
             </nav>    
 
-            <form class="formularz" role="form" method="post" action="/Zadanie6_projekt/search">               
+            <form class="form1" role="form" method="post" action="/Zadanie6_projekt/search">               
                 <input  name="countryName" placeholder="country"
                         pattern="[A-Za-z].{2,30}"   required title="2-30 characters, only letters">               
                 <button type="submit" >Search</button>
@@ -45,7 +45,7 @@
                     if ((TripController.getPrawda() == 1) & (TripController.getCountryList() != null)) {
                 %>
 
-            <table>
+            <table class="tablesorter">
                 <thead>
                     <tr>
 

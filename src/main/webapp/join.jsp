@@ -12,10 +12,10 @@
         <script src="<c:url value="/resources/js/jquery.tablesorter.js"/>"></script> 
         <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         <link href="<c:url value="/resources/css/about.css" />" rel="stylesheet">
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">   
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">       
 
         <link rel="stylesheet" href="<c:url value="/resources/css/index.css" />" />
-        <title>Login Page</title>
+        <title>Join Page</title>
     </head>
     <body>
         <div id="top" >                                   
@@ -24,22 +24,40 @@
         <div id="main" >
             <div class="login" ng-app="myApp">
                 <div class="login-triangle"></div>
-                <h2 class="login-header">Log in</h2>
-                <form  id="formlogin" class="login-container" method="post" ng-controller="validateCtrl" name="myForm" novalidate >
-                    <p><input id="emailInput" type="email" name="email" placeholder="Email" ng-model="useremail" required>
-                        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
-                            <br><span ng-show="myForm.email.$error.email">Invalid email address.</span>                                                       
+                <h2 class="login-header">Join in</h2>
+
+                <form id="formjoin" class="login-container" action="/Zadanie6_projekt/new" method="post" ng-controller="validateCtrl" name="myForm" novalidate >
+                    <p>Firstname:<br>
+                        <input type="text" name="firstname" ng-model="firstname" required>
+                        <span style="color:red" ng-show="myForm.firstname.$dirty && myForm.firstname.$invalid">
+                            <br><span ng-show="myForm.firstname.$error.required">Firstname is required.</span>
                         </span>
                     </p>
-                    <p><input id="passwordInput" type="password" name="pass" placeholder="Password" ng-model="userpass" required>
+                    
+                    <p>Lastname:<br>
+                        <input type="text" name="lastname" ng-model="lastname" required>
+                        <span style="color:red" ng-show="myForm.lastname.$dirty && myForm.lastname.$invalid">
+                            <br><span ng-show="myForm.lastname.$error.required">First is required.</span>
+                        </span>
+                    </p>
+                   
+                    <p>Email:<br>
+                        <input id="emailInput" type="email" name="email" ng-model="useremail" required>
+                        <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                            <br><span ng-show="myForm.email.$error.required">Email is required.</span>
+                            <br><span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                        </span>
+                    </p>
+                    
+                    <p>Password:<br>
+                        <input type="password" name="pass" ng-model="userpass" required>
                         <span style="color:red" ng-show="myForm.pass.$dirty && myForm.pass.$invalid">
                             <br><span ng-show="myForm.pass.$error.required">Password is required.</span>
                         </span>
                     </p>
-                    <p><input class="test" type="submit" value="Log in" ng-disabled="myForm.$invalid"></p>
+                    <p><input type="submit" value="Join in" ng-disabled="myForm.$invalid"></p>
                     <p class="return" style="display:none"></p>
-                    
-                    <p><input class="joinButton" value="Join" type="button" >  </p>
+
                 </form>
 
             </div>

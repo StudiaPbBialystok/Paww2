@@ -9,7 +9,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class Services {
 
@@ -25,36 +24,36 @@ public class Services {
     private CityDao cityDao;
     @Autowired
     private AttractionDao attractionDao;
-    
-    public List<Attraction> findAllAttractions(){
+
+    public List<Attraction> findAllAttractions() {
         return attractionDao.findAll();
     }
-    
-     public List<Attraction> findAttractionsByCityId(int cityId){
+
+    public List<Attraction> findAttractionsByCityId(int cityId) {
         return attractionDao.findByCityId(cityId);
     }
-    
-    public City findCityById(int id){
-            return cityDao.findById(id);
+
+    public City findCityById(int id) {
+        return cityDao.findById(id);
     }
-    
-    public List<City> findCityByCountryId(int id){
+
+    public List<City> findCityByCountryId(int id) {
         return cityDao.findByCountryId(id);
-        
+
     }
-    
-    public List<City> findAllCities(){
+
+    public List<City> findAllCities() {
         return cityDao.findAll();
     }
-    
+
     public Trip findById(int id) {
         return tripDao.findById(id);
     }
 
-    public Stop findStopById(int id){
+    public Stop findStopById(int id) {
         return stopDao.findById(id);
     }
-    
+
     public List<Country> findCountryByName(String name) {
         return countryDao.findByName(name);
     }
@@ -63,28 +62,39 @@ public class Services {
         return tripDao.findByName(name);
     }
 
+    public boolean addUser(Userx user) {
+        return userxDao.addUser(user);
+    }
+
+    public List<Userx> findAllUsers() {
+        return userxDao.findAll();
+    }
+
     public List<Userx> findUserxByEmail(String email) {
         return userxDao.findByEmail(email);
     }
 
-     public Userx findUserxLogins(String email, String password) {
+    public Userx findUserEmail(String email) {
+        return userxDao.findUserEmail2(email);
+    }
+
+    public Userx findUserxLogins(String email, String password) {
         return userxDao.findUser(email, password);
     }
-    
+
     public List<Trip> findAllTrips() {
         return tripDao.findAll();
     }
 
-    public List<Stop> findStopByTripId(int tripId)
-    {
-         return stopDao.findByTripId(tripId);
+    public List<Stop> findStopByTripId(int tripId) {
+        return stopDao.findByTripId(tripId);
     }
-    
-    public List<Stop> findAllStops(){
+
+    public List<Stop> findAllStops() {
         return stopDao.findAll();
     }
-    
-    public boolean addStop(Stop newStop){
+
+    public boolean addStop(Stop newStop) {
         return stopDao.addStop(newStop);
     }
 
@@ -99,15 +109,25 @@ public class Services {
     public boolean deleteTrip(Trip trip) {
         return tripDao.deleteTrip(trip);
     }
-    
-    public boolean deleteStop(Stop stop){
+
+    public boolean deleteStop(Stop stop) {
         return stopDao.deleteStop(stop);
     }
 
-    public List<Stop> findAfterDate(String date){
+    public List<Stop> findAfterDate(String date) {
         return stopDao.findAfterDate(date);
     }
-    
+
+    public int getMaxUserId(List<Userx> userxs) {
+        int max = 0;
+        for (Userx userx : userxs) {
+            if (userx.getId() > max) {
+                max = userx.getId();
+            }
+        }
+        return max;
+    }
+
     public int getMaxId(List<Trip> trips) {
         int max = 0;
         for (Trip trip : trips) {
@@ -117,7 +137,7 @@ public class Services {
         }
         return max;
     }
-    
+
     public int getMaxIdStops(List<Stop> stops) {
         int max = 0;
         for (Stop stop : stops) {
@@ -127,6 +147,5 @@ public class Services {
         }
         return max;
     }
-    
 
 }

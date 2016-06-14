@@ -23,7 +23,7 @@
                     <ul class="nav navbar-nav navbar-left">
                         <li>
                             <button id="sidebarToggle" class="btn btn-primary">
-                                <i class="fa fa-angle-left"></i> <-
+                                <i class="fa fa-angle-left"></i> Menu
                             </button>
                         </li>
                     </ul>

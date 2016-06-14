@@ -16,6 +16,19 @@ import org.springframework.transaction.annotation.Transactional;
  *
  *
  */
+interface Iuser {
+
+    //  wheel revolutions per minute
+    Userx findById(Integer id);
+
+    List<Userx> findByName(String name);
+
+    List<Userx> findAll();
+
+    boolean addUser(Userx user);
+
+}
+
 @Repository("userxDao")
 public class UserxDao {
 
@@ -26,22 +39,41 @@ public class UserxDao {
     public Userx findById(Integer id) {
         return (Userx) entityManager.find(Userx.class, id);
     }
-    
-    
+
     @Transactional(readOnly = true)
     public Userx findUser(String email, String password) {
         TypedQuery<Userx> query = entityManager.createNamedQuery("Userx.findByLastChristmas", Userx.class);
         query.setParameter("email", email);
         query.setParameter("password", password);
-        return (Userx)query.getSingleResult();
+        return (Userx) query.getSingleResult();
     }
     
+    @Transactional(readOnly = true)
+    public Userx findUserEmail2(String email) {
+        TypedQuery<Userx> query = entityManager.createNamedQuery("Userx.findByEmail", Userx.class);        
+        query.setParameter("email", email);       
+        return (Userx) query.getSingleResult();
+    }
+
+    @Transactional
+    public boolean addUser(Userx user) {
+        entityManager = entityManager.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.persist(user);
+        entityManager.flush();
+        entityManager.getTransaction().commit();
+        return true;
+    }
+
+    public List<Userx> findAll() {
+        TypedQuery<Userx> query = entityManager.createNamedQuery("Userx.findAll", Userx.class);
+        return (List<Userx>) query.getResultList();
+    }
 
     public List<Userx> findByEmail(String email) {
         TypedQuery<Userx> query = entityManager.createNamedQuery("Userx.findByEmail", Userx.class);
         query.setParameter("email", email);
-        return (List<Userx>)query.getResultList();
+        return (List<Userx>) query.getResultList();
     }
-    
-    
+
 }

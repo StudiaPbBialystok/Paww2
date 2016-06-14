@@ -32,7 +32,7 @@
             </nav>    
 
 
-            <form class="form-inline col-sm-offset-4 formularz" role="form" method="post"
+            <form class="form-inline col-sm-offset-4 form1" role="form" method="post"
                   action="/Zadanie6_projekt/edit">
                 <div class="form-group">
                     <input id="tripName" name="tripName" placeholder="Name"
